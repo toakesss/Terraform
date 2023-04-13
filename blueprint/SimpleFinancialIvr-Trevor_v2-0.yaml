@@ -9,8 +9,8 @@ inboundCall:
       defaultLanguageSkill:
         noValue: true
       textToSpeech:
-        defaultEngine:
-          voice: Jill
+        Genesys Enhanced TTS:
+          voice: en-US-Neural2-F
   initialGreeting:
     tts: Hi welcome to SimpleFinancial.  Please listen to our menu carefully.
   settingsActionDefaults:

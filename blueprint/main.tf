@@ -103,7 +103,7 @@ resource "genesyscloud_flow" "mysimpleflow" {
 
 resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
   start_phone_number = "+18005452729"
-  end_phone_number   = "+19205452729"
+  end_phone_number   = "+18005452729"
   description        = "GCV Number for inbound calls"
   comments           = "Additional comments"
 }
