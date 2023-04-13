@@ -103,7 +103,7 @@ resource "genesyscloud_flow" "mysimpleflow" {
 
 variable "my_ivr_did_number" {
   type = string
-  description = "phone number used for my simple IVR"
+  description = "phone number used for simple IVR"
 }
 
 
