@@ -10,9 +10,10 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
+
 resource "genesyscloud_user" "sf_johnsmith" {
-  email           = "john.smith@simplefinancial.com"
-  name            = "John Smith"
+  email           = "TOjohn.smoke@simplefinancial.com"
+  name            = "John Smoke"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -27,7 +28,7 @@ resource "genesyscloud_user" "sf_johnsmith" {
     }
   }
   employer_info {
-    official_name = "John Smith"
+    official_name = "John Smoke"
     employee_id   = "12345"
     employee_type = "Full-time"
     date_hire     = "2021-03-18"
@@ -35,8 +36,8 @@ resource "genesyscloud_user" "sf_johnsmith" {
 }
 
 resource "genesyscloud_user" "sf_janesmith" {
-  email           = "jane.smith@simplefinancial.com"
-  name            = "Jane Smith"
+  email           = "TOjane.smoke@simplefinancial.com"
+  name            = "Jane Smoke"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -51,7 +52,7 @@ resource "genesyscloud_user" "sf_janesmith" {
     }
   }
   employer_info {
-    official_name = "Jane Smith"
+    official_name = "Jane Smoke"
     employee_id   = "67890"
     employee_type = "Full-time"
     date_hire     = "2021-03-18"
@@ -59,7 +60,7 @@ resource "genesyscloud_user" "sf_janesmith" {
 }
 
 resource "genesyscloud_routing_queue" "queue_ira" {
-  name                     = "Simple Financial IRA queue"
+  name                     = "TO Simple Financial IRA queue"
   description              = "Simple Financial IRA questions and answers"
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   acw_timeout_ms           = 300000
@@ -75,7 +76,7 @@ resource "genesyscloud_routing_queue" "queue_ira" {
 }
 
 resource "genesyscloud_routing_queue" "queue_K401" {
-  name                     = "Simple Financial 401K queue"
+  name                     = "TO Simple Financial 401K queue"
   description              = "Simple Financial 401K questions and answers"
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   acw_timeout_ms           = 300000
@@ -95,14 +96,14 @@ resource "genesyscloud_routing_queue" "queue_K401" {
 }
 
 resource "genesyscloud_flow" "mysimpleflow" {
-  filepath = "./SimpleFinancialIvr_v2-0.yaml"
-  file_content_hash = filesha256("./SimpleFinancialIvr_v2-0.yaml") 
+  filepath = "./SimpleFinancialIvr-Trevor_v2-0.yaml"
+  file_content_hash = filesha256("./SimpleFinancialIvr-Trevor_v2-0.yaml") 
 }
 
 
 resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
-  start_phone_number = "+19205422729"
-  end_phone_number   = "+19205422729"
+  start_phone_number = "+18005452729"
+  end_phone_number   = "+19205452729"
   description        = "GCV Number for inbound calls"
   comments           = "Additional comments"
 }
@@ -110,7 +111,7 @@ resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
 resource "genesyscloud_architect_ivr" "mysimple_ivr" {
   name               = "A simple IVR"
   description        = "A sample IVR configuration"
-  dnis               = ["+19205422729", "+19205422729"]
+  dnis               = ["+18005452729", "+18005452729"]
   open_hours_flow_id = genesyscloud_flow.mysimpleflow.id
   depends_on         = [
     genesyscloud_flow.mysimpleflow,
