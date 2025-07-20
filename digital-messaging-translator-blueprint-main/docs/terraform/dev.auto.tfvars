@@ -1,4 +1,4 @@
 #Prod
-environment            = "dev"
+environment            = "genesyssc5"
 prefix                 = "web-messaging"
-email                  = "test-email@company.com"
+email                  = "trevor.oakes@genesys.com"
